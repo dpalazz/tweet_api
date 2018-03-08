@@ -162,3 +162,47 @@ Processing by TweetsController#index as HTML
 Completed 200 OK in 33ms (Views: 14.5ms | ActiveRecord: 14.7ms)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1653140390681946390)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (6.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1653140390681946390)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mTweet Create (29.2ms)[0m  [1m[32mINSERT INTO "tweets" ("handle", "retweeted", "imgUrl", "tweetBody") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["handle", "@russel"], ["retweeted", "@doug"], ["imgUrl", "https://image.ibb.co/j1Nnnc/doug.jpg"], ["tweetBody", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae."]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mTweet Create (0.4ms)[0m  [1m[32mINSERT INTO "tweets" ("handle", "imgUrl", "tweetBody", "background") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["handle", "@carlf"], ["imgUrl", "https://image.ibb.co/m43tSc/carl.jpg"], ["tweetBody", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae."], ["background", true]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("handle", "imgUrl", "tweetBody", "background") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["handle", "@russel"], ["imgUrl", "https://image.ibb.co/g2M2Lx/russel.jpg"], ["tweetBody", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae."], ["background", false]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mTweet Create (0.5ms)[0m  [1m[32mINSERT INTO "tweets" ("handle", "imgUrl", "tweetBody", "background") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["handle", "@carlf"], ["imgUrl", "https://image.ibb.co/m43tSc/carl.jpg"], ["tweetBody", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae."], ["background", true]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT  "tweets".* FROM "tweets" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTweet Load (0.6ms)[0m  [1m[34mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1m[34mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTweet Load (0.7ms)[0m  [1m[34mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
